@@ -1,17 +1,18 @@
-original_prompt <- "uninitialized> "
-
-
 #' init_wd
+#'
+#' @param enabled
+#' @param fullPath
+#' @param promptLen
 #'
 #' @return
 #' @export
 #'
 #' @examples
-init_wd <- function() {
+init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
   options(
-    "wd.prompt.enabled" = TRUE,
-    "wd.prompt.fullPath" = TRUE,
-    "wd.prompt.promptLen" = 15
+    "wd.prompt.enabled" = enabled,
+    "wd.prompt.fullPath" = fullPath,
+    "wd.prompt.promptLen" = promptLen
   )
 }
 
@@ -23,13 +24,11 @@ init_wd <- function() {
 #'
 #' @examples
 start_wd <- function() {
-  options("wd.prompt.enabled" = TRUE)
   if (!"wd_prompt" %in% getTaskCallbackNames()) {
-    wd.prompt:::original_prompt <- getOption("prompt")
-    sink("/dev/null") # suppress output
-    addTaskCallback(wd_prompt, data = NULL, name = "wd_prompt")
-#    wd_prompt() # Init prompt for first time
-    sink()
+    options("wd.prompt.enabled" = TRUE)
+    suppressMessages(
+      addTaskCallback(wd_prompt, data = getOption("prompt"), name = "wd_prompt")
+    )
   }
 }
 
@@ -52,21 +51,29 @@ stop_wd <- function() {
 #'
 #'There are no arguments because the options are used to control the behavior.
 #'
+#' @param ...
+#'
 #' @return
 #' @export
 #'
-wd_prompt <- function() {
+wd_prompt <- function(...) {
+  wd_enabled <- getOption("wd.prompt.enabled")
+  fullPath <- getOption("wd.prompt.fullPath")
+  promptLen <- c(getOption("wd.prompt.promptLen"))
+
+  if (is.null(wd_enabled) || is.null(fullPath) || is.null(promptLen)) {
+    stop("wd.prompt options are not properly configured.  Try running wd_init().")
+  }
+
   #
   # Terminate the callback by returning FALSE.  This offers the advantage
   # of not having to know the id of the callback.  Yeah, having played around
   # with callbacks, it's entirely possible to get multiple instances.
   #
-  if (getOption("wd.prompt.enabled") == FALSE) {
-    options("prompt" = original_prompt)
-    return( FALSE ) }
-
-  fullPath <- getOption("wd.prompt.fullPath")
-  promptLen <- c(getOption("wd.prompt.promptLen"))
+  if (wd_enabled == FALSE) {
+    options("prompt" = as.character(tail(list(...), 1)))
+    return(FALSE)
+  }
 
   curDir <- getwd()
   if (fullPath) {
@@ -92,17 +99,16 @@ wd_prompt <- function() {
 check_wd <- function() {
   lapply(
     c("enabled", "fullPath", "promptLen"),
-    function(opt) {
+    function (opt) {
       option <- paste("wd.prompt.", opt, sep = "")
-      cat("  ", option, ":  ", getOption(option), "\n", sep = "")
+      message("  Option ", option, ":  ", getOption(option))
     }
   )
-  cat("  wd.prompt::orginal_prompt:  ", wd.prompt:::original_prompt, "\n")
   if ( "wd_prompt" %in% getTaskCallbackNames() ) {
-    cat("  TaskCallback wd_prompt is running.")
+    message("  TaskCallback 'wd_prompt' is running.")
   }
   else {
-    cat("  No TaskCallback called wd_prompt found.")
+    message("  No TaskCallback 'wd_prompt' found.")
   }
 }
 
@@ -112,7 +118,6 @@ check_wd <- function() {
 #' @return
 #' @export
 #'
-#' @examples
 remove_wd <- function() { removeTaskCallback("wd_prompt") }
 
 #' default_prompt
@@ -120,5 +125,4 @@ remove_wd <- function() { removeTaskCallback("wd_prompt") }
 #' @return
 #' @export
 #'
-#' @examples
 default_prompt <- function() {options("prompt" = "> ")}
