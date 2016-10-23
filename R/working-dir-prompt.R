@@ -10,9 +10,9 @@
 #' @examples
 init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
   options(
-    "wd.prompt.enabled" = enabled,
-    "wd.prompt.fullPath" = fullPath,
-    "wd.prompt.promptLen" = promptLen
+    "wdprompt.enabled" = enabled,
+    "wdprompt.fullPath" = fullPath,
+    "wdprompt.promptLen" = promptLen
   )
 }
 
@@ -25,7 +25,7 @@ init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
 #' @examples
 start_wd <- function() {
   if (!"wd_prompt" %in% getTaskCallbackNames()) {
-    options("wd.prompt.enabled" = TRUE)
+    options("wdprompt.enabled" = TRUE)
     suppressMessages(
       addTaskCallback(wd_prompt, data = getOption("prompt"), name = "wd_prompt")
     )
@@ -41,7 +41,7 @@ start_wd <- function() {
 #' @examples
 stop_wd <- function() {
   options(
-    "wd.prompt.enabled" = FALSE
+    "wdprompt.enabled" = FALSE
 #    "prompt" = original_prompt
     )
 }
@@ -57,12 +57,12 @@ stop_wd <- function() {
 #' @export
 #'
 wd_prompt <- function(...) {
-  wd_enabled <- getOption("wd.prompt.enabled")
-  fullPath <- getOption("wd.prompt.fullPath")
-  promptLen <- c(getOption("wd.prompt.promptLen"))
+  wd_enabled <- getOption("wdprompt.enabled")
+  fullPath <- getOption("wdprompt.fullPath")
+  promptLen <- c(getOption("wdprompt.promptLen"))
 
   if (is.null(wd_enabled) || is.null(fullPath) || is.null(promptLen)) {
-    stop("wd.prompt options are not properly configured.  Try running wd_init().")
+    stop("wdprompt options are not properly configured.  Try running wd_init().")
   }
 
   #
@@ -100,7 +100,7 @@ check_wd <- function() {
   lapply(
     c("enabled", "fullPath", "promptLen"),
     function (opt) {
-      option <- paste("wd.prompt.", opt, sep = "")
+      option <- paste("wdprompt.", opt, sep = "")
       message("  Option ", option, ":  ", getOption(option))
     }
   )

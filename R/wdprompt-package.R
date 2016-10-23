@@ -1,4 +1,4 @@
-#' wd.prompt Console prompt follows current working directory like bash
+#' wdprompt Console prompt follows current working directory like bash
 #'
 #' Emulate bash prompt behavior in R console by replacing R's
 #' default prompt of \code{> } with the \code{getwd()} string. RStudio does
