@@ -7,7 +7,6 @@
 #' @return
 #' @export
 #'
-#' @examples
 init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
   options(
     "wdprompt.enabled" = enabled,
@@ -22,7 +21,6 @@ init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
 #' @return
 #' @export
 #'
-#' @examples
 start_wd <- function() {
   if (!"wd_prompt" %in% getTaskCallbackNames()) {
     options("wdprompt.enabled" = TRUE)
@@ -38,23 +36,16 @@ start_wd <- function() {
 #' @return
 #' @export
 #'
-#' @examples
-stop_wd <- function() {
-  options(
-    "wdprompt.enabled" = FALSE
-#    "prompt" = original_prompt
-    )
-}
+stop_wd <- function() { options("wdprompt.enabled" = FALSE) }
 
 
 #' wd_prompt
 #'
-#'There are no arguments because the options are used to control the behavior.
+#' There are no arguments because the options are used to control the behavior.
 #'
 #' @param ...
 #'
 #' @return
-#' @export
 #'
 wd_prompt <- function(...) {
   wd_enabled <- getOption("wdprompt.enabled")
@@ -104,6 +95,7 @@ check_wd <- function() {
       message("  Option ", option, ":  ", getOption(option))
     }
   )
+
   if ( "wd_prompt" %in% getTaskCallbackNames() ) {
     message("  TaskCallback 'wd_prompt' is running.")
   }
@@ -125,4 +117,4 @@ remove_wd <- function() { removeTaskCallback("wd_prompt") }
 #' @return
 #' @export
 #'
-default_prompt <- function() {options("prompt" = "> ")}
+default_prompt <- function() { options("prompt" = "> ") }
