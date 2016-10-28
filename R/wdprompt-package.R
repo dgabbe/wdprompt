@@ -15,4 +15,6 @@
 #'  \item \url{https://stackoverflow.com/questions/4222476/r-display-a-time-clock-in-the-r-command-line}
 #'  \item \url{https://stackoverflow.com/questions/25136059/how-to-show-working-directory-in-r-prompt}
 #' }
+#' @docType package
+#' @name wdprompt
 NULL
