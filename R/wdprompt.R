@@ -44,7 +44,7 @@ stop_wd <- function() { options("wdprompt.enabled" = FALSE) }
 #'
 #' There are no arguments because the options are used to control the behavior.
 #'
-#' @param ...
+#' @param dotdotdot
 #'
 #' @return TRUE
 #'
