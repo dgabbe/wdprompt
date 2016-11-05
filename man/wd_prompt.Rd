@@ -10,7 +10,7 @@ wd_prompt(...)
 \item{...}{}
 }
 \value{
-
+TRUE
 }
 \description{
 There are no arguments because the options are used to control the behavior.

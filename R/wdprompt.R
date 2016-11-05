@@ -1,10 +1,12 @@
 #' init_wd
 #'
 #' @param enabled
+#'
 #' @param fullPath
+#'
 #' @param promptLen
 #'
-#' @return
+#' @return temp
 #' @export
 #'
 init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
@@ -12,13 +14,12 @@ init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
     "wdprompt.enabled" = enabled,
     "wdprompt.fullPath" = fullPath,
     "wdprompt.promptLen" = promptLen
-  )
+    )
 }
-
 
 #' start_wd
 #'
-#' @return
+#' @return temp
 #' @export
 #'
 start_wd <- function() {
@@ -33,7 +34,7 @@ start_wd <- function() {
 
 #' stop_wd
 #'
-#' @return
+#' @return temp
 #' @export
 #'
 stop_wd <- function() { options("wdprompt.enabled" = FALSE) }
@@ -45,7 +46,7 @@ stop_wd <- function() { options("wdprompt.enabled" = FALSE) }
 #'
 #' @param ...
 #'
-#' @return
+#' @return TRUE
 #'
 wd_prompt <- function(...) {
   wd_enabled <- getOption("wdprompt.enabled")
@@ -83,10 +84,9 @@ wd_prompt <- function(...) {
 
 #' check_wd
 #'
-#' @return
+#' @return temp
 #' @export
 #'
-#' @examples
 check_wd <- function() {
   lapply(
     c("enabled", "fullPath", "promptLen"),
@@ -107,14 +107,14 @@ check_wd <- function() {
 
 #' remove_wd
 #'
-#' @return
+#' @return temp
 #' @export
 #'
 remove_wd <- function() { removeTaskCallback("wd_prompt") }
 
 #' default_prompt
 #'
-#' @return
+#' @return temp
 #' @export
 #'
 default_prompt <- function() { options("prompt" = "> ") }

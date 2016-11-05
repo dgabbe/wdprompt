@@ -6,6 +6,9 @@
 \usage{
 default_prompt()
 }
+\value{
+temp
+}
 \description{
 default_prompt
 }

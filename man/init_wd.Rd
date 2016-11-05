@@ -7,7 +7,14 @@
 init_wd(enabled = TRUE, fullPath = TRUE, promptLen = 15)
 }
 \arguments{
+\item{enabled}{}
+
+\item{fullPath}{}
+
 \item{promptLen}{}
+}
+\value{
+temp
 }
 \description{
 init_wd

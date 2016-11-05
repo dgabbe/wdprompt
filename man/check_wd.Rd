@@ -6,6 +6,9 @@
 \usage{
 check_wd()
 }
+\value{
+temp
+}
 \description{
 check_wd
 }

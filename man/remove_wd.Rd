@@ -6,6 +6,9 @@
 \usage{
 remove_wd()
 }
+\value{
+temp
+}
 \description{
 remove_wd
 }
