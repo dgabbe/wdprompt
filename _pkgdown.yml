@@ -1,0 +1,13 @@
+reference:
+  - title: "Controlling wdprompt"
+    desc: >
+      Functions for starting/stopping.
+    contents:
+      - ends_with("_wd")
+      - wd_prompt
+  - title: "Diagnostic Functions"
+    desc: "Figuring out what's wrong"
+    contents:
+      - check_wd
+      - remove_wd
+      - default_prompt

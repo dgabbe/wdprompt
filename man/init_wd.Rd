@@ -2,21 +2,22 @@
 % Please edit documentation in R/wdprompt.R
 \name{init_wd}
 \alias{init_wd}
-\title{init_wd}
+\title{Initializes all 3 options that control prompt behavior.}
 \usage{
 init_wd(enabled = TRUE, fullPath = TRUE, promptLen = 15)
 }
 \arguments{
-\item{enabled}{}
+\item{enabled}{\code{TRUE} to keep wdprompt active. \code{FALSE} to stop it
+and revert back to the static prompt when \code{start_wd} was called.}
 
-\item{fullPath}{}
+\item{fullPath}{\code{TRUE} to display the full path returned by \code{\link{getwd}}.
+\code{FALSE}}
 
-\item{promptLen}{}
-}
-\value{
-temp
+\item{promptLen}{Number specifying the number of characters in the prompt string.
+Only used if \code{wdprompt.fullPath} is \code{FALSE}.}
 }
 \description{
-init_wd
+If you want to try different options after \code{start_wd} is called, call
+this again function with your parameter values.
 }
 

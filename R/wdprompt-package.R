@@ -42,15 +42,15 @@
 #' }
 #'
 #' @section Options:
-#' \strong{\code{wdprompt.enabled}}: \code{TRUE} to use the prompt. \code{FALSE} to stop
+#' \describe{
+#' \item{\strong{\code{wdprompt.enabled}}}{\code{TRUE} to use the prompt. \code{FALSE} to stop
 #' the prompt and revert back to a static prompt.  See \code{\link{start_wd}} for
-#' the string that is used.
-#'
-#' \strong{\code{wdprompt.fullPath}}: \code{TRUE} to display the full path name.  \code{FALSE} to
-#' to show a truncated prompt. See \code{\link{wd_prompt}} for the details.
-#'
-#' \strong{\code{wdprompt.promptLen}}: \code{number} that determines the length of truncated
-#' prompt.
+#' the string that is used.}
+#' \item{\strong{\code{wdprompt.fullPath}}}{\code{TRUE} to display the full path name.  \code{FALSE} to
+#' to show a truncated prompt. See \code{\link{wd_prompt}} for the details.}
+#' \item{\strong{\code{wdprompt.promptLen}}}{\code{number} that determines the length of truncated
+#' prompt.}
+#' }
 #'
 #' @section Random Thoughts:
 #'
@@ -65,7 +65,7 @@
 #' of \code{Rprofile.site}. The taskCallbackManager creates a copy of your code
 #' so one of the only ways to control it is with \code{\link{options}}.  During
 #' development, I discovered it's very easy to instantiate multiple instances of
-#' a Callback so having the code check an option for when to stop made it simple
+#' a callback so having the code check an option for when to stop made it simple
 #' to terminate all instances.
 #'
 #' @section References:
@@ -74,5 +74,5 @@
 #'  \item \url{https://stackoverflow.com/questions/25136059/how-to-show-working-directory-in-r-prompt}
 #' }
 #' @docType package
-#' @name wdprompt
+#' @name wdprompt-package
 NULL

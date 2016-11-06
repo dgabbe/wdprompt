@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>init_wd — init_wd • wdprompt</title>
+<title>Initializes all 3 options that control prompt behavior. — init_wd • wdprompt</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -71,11 +71,12 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>init_wd</h1>
+    <h1>Initializes all 3 options that control prompt behavior.</h1>
     </div>
 
     
-    <p>init_wd</p>
+    <p>If you want to try different options after <code>start_wd</code> is called, call
+this again function with your parameter values.</p>
     
 
     <pre><span class='fu'>init_wd</span>(<span class='kw'>enabled</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fullPath</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>promptLen</span> <span class='kw'>=</span> <span class='fl'>15</span>)</pre>
@@ -83,16 +84,15 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>enabled</dt>
-      <dd></dd>
+      <dd><code>TRUE</code> to keep wdprompt active. <code>FALSE</code> to stop it
+and revert back to the static prompt when <code>start_wd</code> was called.</dd>
       <dt>fullPath</dt>
-      <dd></dd>
+      <dd><code>TRUE</code> to display the full path returned by <code>getwd</code>.
+<code>FALSE</code></dd>
       <dt>promptLen</dt>
-      <dd></dd>
+      <dd>Number specifying the number of characters in the prompt string.
+Only used if <code>wdprompt.fullPath</code> is <code>FALSE</code>.</dd>
     </dl>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>temp</p>
     
 
   </div>
@@ -100,9 +100,7 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-          </ul>
+                </ul>
 
   </div>
 </div>

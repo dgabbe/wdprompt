@@ -1,12 +1,17 @@
-#' init_wd
+#' Initializes all 3 options that control prompt behavior.
 #'
-#' @param enabled
+#' If you want to try different options after \code{start_wd} is called, call
+#' this again function with your parameter values.
 #'
-#' @param fullPath
+#' @param enabled \code{TRUE} to keep wdprompt active. \code{FALSE} to stop it
+#' and revert back to the static prompt when \code{start_wd} was called.
 #'
-#' @param promptLen
+#' @param fullPath \code{TRUE} to display the full path returned by \code{\link{getwd}}.
+#' \code{FALSE}
 #'
-#' @return temp
+#' @param promptLen Number specifying the number of characters in the prompt string.
+#' Only used if \code{wdprompt.fullPath} is \code{FALSE}.
+#'
 #' @export
 #'
 init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
@@ -17,24 +22,28 @@ init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
     )
 }
 
-#' start_wd
+#' Starts the new behavior for the console prompt if it is not already
+#' running for an interactive session.
 #'
-#' @return temp
+#' @return TRUE if prompt started. FALSE otherwise.
+#'
 #' @export
 #'
 start_wd <- function() {
-  if (!"wd_prompt" %in% getTaskCallbackNames()) {
-    options("wdprompt.enabled" = TRUE)
+  if (!"wd_prompt" %in% getTaskCallbackNames() && interactive()) {
+    init_wd()
     suppressMessages(
       addTaskCallback(wd_prompt, data = getOption("prompt"), name = "wd_prompt")
     )
+    return(TRUE)
+  } else {
+    return(FALSE)
   }
 }
 
 
 #' stop_wd
 #'
-#' @return temp
 #' @export
 #'
 stop_wd <- function() { options("wdprompt.enabled" = FALSE) }
@@ -44,7 +53,7 @@ stop_wd <- function() { options("wdprompt.enabled" = FALSE) }
 #'
 #' There are no arguments because the options are used to control the behavior.
 #'
-#' @param dotdotdot
+#' @param ...
 #'
 #' @return TRUE
 #'
@@ -114,7 +123,6 @@ remove_wd <- function() { removeTaskCallback("wd_prompt") }
 
 #' default_prompt
 #'
-#' @return temp
 #' @export
 #'
 default_prompt <- function() { options("prompt" = "> ") }

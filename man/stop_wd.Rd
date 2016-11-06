@@ -6,9 +6,6 @@
 \usage{
 stop_wd()
 }
-\value{
-temp
-}
 \description{
 stop_wd
 }

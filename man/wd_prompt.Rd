@@ -7,7 +7,7 @@
 wd_prompt(...)
 }
 \arguments{
-\item{dotdotdot}{}
+\item{...}{}
 }
 \value{
 TRUE
