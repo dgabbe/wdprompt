@@ -2,14 +2,11 @@
 % Please edit documentation in R/wdprompt.R
 \name{remove_wd}
 \alias{remove_wd}
-\title{remove_wd}
+\title{Brute force removal of the taskCallback.}
 \usage{
 remove_wd()
 }
-\value{
-temp
-}
 \description{
-remove_wd
+Brute force removal of the taskCallback.
 }
 

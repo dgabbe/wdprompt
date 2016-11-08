@@ -24,7 +24,6 @@ devtools::install_github("dgabbe/wdprompt")
 
 To start manually:
 \preformatted{
-wdprompt::init_wd()
 wdprompt::start_wd()
 }
 
@@ -35,7 +34,6 @@ if (interactive()) {
   # wdprompt::stop_wd() if you want to turn off the prompt.
   #
   if ( length(find.package("wdprompt", quiet = TRUE)) != 0 ) {
-    wdprompt::init_wd()
     wdprompt::start_wd()
   }
 }
@@ -62,6 +60,14 @@ to show a truncated prompt. See \code{\link{wd_prompt}} for the details.}
 \item{\strong{\code{wdprompt.promptLen}}}{\code{number} that determines the length of truncated
 prompt.}
 }
+}
+
+\section{R Triva}{
+
+The taskCallback is invoked at the \emph{end} of each top-level task.  Roughly translated
+that means when R successfully evaluates an expression typed in the console.  \code{start_wd}
+adds the taskCallback, passing in the current prompt and then executes \code{wd_prompt} to
+set the prompt to be this new one.
 }
 
 \section{Random Thoughts}{

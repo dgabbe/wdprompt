@@ -2,8 +2,7 @@
 % Please edit documentation in R/wdprompt.R
 \name{start_wd}
 \alias{start_wd}
-\title{Starts the new behavior for the console prompt if it is not already
-running for an interactive session.}
+\title{Starts the new behavior for the console prompt.}
 \usage{
 start_wd()
 }
@@ -11,7 +10,6 @@ start_wd()
 TRUE if prompt started. FALSE otherwise.
 }
 \description{
-Starts the new behavior for the console prompt if it is not already
-running for an interactive session.
+If it is not already running for an interactive session.
 }
 

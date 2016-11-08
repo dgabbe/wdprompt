@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>wd_prompt — wd_prompt • wdprompt</title>
+<title>The real prompt function. — wd_prompt • wdprompt</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -49,6 +49,9 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../reference/wdprompt-package.html">Intro</a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
@@ -71,11 +74,11 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>wd_prompt</h1>
+    <h1>The real prompt function.</h1>
     </div>
 
     
-    <p>There are no arguments because the options are used to control the behavior.</p>
+    <p>The real prompt function.</p>
     
 
     <pre><span class='fu'>wd_prompt</span>(<span class='no'>...</span>)</pre>
@@ -83,12 +86,18 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>...</dt>
-      <dd></dd>
+      <dd>A taskCallback function can be called with 4 or 5 parameters. If
+<code>data</code> is specified, it is always the 5th argument.  Seemed pointless to
+declare explicit parameters that would never be used.</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>TRUE</p>
+    <p>TRUE to continue the taskCallback.  FALSE will delete the taskCallback.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p>addTaskCallback</p>
     
 
   </div>
@@ -98,6 +107,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
           </ul>
 
   </div>

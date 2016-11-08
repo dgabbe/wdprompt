@@ -2,11 +2,11 @@
 % Please edit documentation in R/wdprompt.R
 \name{default_prompt}
 \alias{default_prompt}
-\title{default_prompt}
+\title{Reset to R's default prompt.}
 \usage{
 default_prompt()
 }
 \description{
-default_prompt
+Reset to R's default prompt.
 }
 

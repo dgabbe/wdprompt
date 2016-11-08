@@ -87,10 +87,11 @@ this again function with your parameter values.</p>
       <dd><code>TRUE</code> to keep wdprompt active. <code>FALSE</code> to stop it
 and revert back to the static prompt when <code>start_wd</code> was called.</dd>
       <dt>fullPath</dt>
-      <dd><code>TRUE</code> to display the full path returned by <code>getwd</code>.
-<code>FALSE</code></dd>
+      <dd><code>TRUE</code> to display the full path returned by
+<code>getwd</code>. <code>FALSE</code> to truncate to the last <code>promptLen</code>
+characters of the path.</dd>
       <dt>promptLen</dt>
-      <dd>Number specifying the number of characters in the prompt string.
+      <dd>A number specifying the length of the prompt string.
 Only used if <code>wdprompt.fullPath</code> is <code>FALSE</code>.</dd>
     </dl>
     

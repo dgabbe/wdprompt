@@ -2,11 +2,11 @@
 % Please edit documentation in R/wdprompt.R
 \name{stop_wd}
 \alias{stop_wd}
-\title{stop_wd}
+\title{Stop this prompt.}
 \usage{
 stop_wd()
 }
 \description{
-stop_wd
+And revert back to the prompt in effect when \code{start_wd} was executed.
 }
 

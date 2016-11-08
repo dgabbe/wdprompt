@@ -10,10 +10,11 @@ init_wd(enabled = TRUE, fullPath = TRUE, promptLen = 15)
 \item{enabled}{\code{TRUE} to keep wdprompt active. \code{FALSE} to stop it
 and revert back to the static prompt when \code{start_wd} was called.}
 
-\item{fullPath}{\code{TRUE} to display the full path returned by \code{\link{getwd}}.
-\code{FALSE}}
+\item{fullPath}{\code{TRUE} to display the full path returned by
+\code{\link{getwd}}. \code{FALSE} to truncate to the last \code{promptLen}
+characters of the path.}
 
-\item{promptLen}{Number specifying the number of characters in the prompt string.
+\item{promptLen}{A number specifying the length of the prompt string.
 Only used if \code{wdprompt.fullPath} is \code{FALSE}.}
 }
 \description{

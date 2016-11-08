@@ -1,9 +1,19 @@
+navbar:
+  left:
+  - text: Intro
+    href: reference/wdprompt-package.html
+  - text: Reference
+    href: reference/index.html
 reference:
   - title: "Controlling wdprompt"
-    desc: >
-      Functions for starting/stopping.
+    desc: "Functions for starting/stopping."
     contents:
-      - ends_with("_wd")
+      - start_wd
+      - stop_wd
+      - init_wd
+  - title: The prompt function
+    desc: "The function that does all the work."
+    contents:
       - wd_prompt
   - title: "Diagnostic Functions"
     desc: "Figuring out what's wrong"

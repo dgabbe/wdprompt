@@ -2,14 +2,15 @@
 % Please edit documentation in R/wdprompt.R
 \name{check_wd}
 \alias{check_wd}
-\title{check_wd}
+\title{Diagnostic to display complete status.}
 \usage{
 check_wd()
 }
-\value{
-temp
-}
 \description{
-check_wd
+Diagnostic to display complete status.
+}
+\examples{
+wdprompt::check_wd()
+
 }
 

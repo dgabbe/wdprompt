@@ -6,10 +6,11 @@
 #' @param enabled \code{TRUE} to keep wdprompt active. \code{FALSE} to stop it
 #' and revert back to the static prompt when \code{start_wd} was called.
 #'
-#' @param fullPath \code{TRUE} to display the full path returned by \code{\link{getwd}}.
-#' \code{FALSE}
+#' @param fullPath \code{TRUE} to display the full path returned by
+#'   \code{\link{getwd}}. \code{FALSE} to truncate to the last \code{promptLen}
+#'   characters of the path.
 #'
-#' @param promptLen Number specifying the number of characters in the prompt string.
+#' @param promptLen A number specifying the length of the prompt string.
 #' Only used if \code{wdprompt.fullPath} is \code{FALSE}.
 #'
 #' @export
@@ -22,8 +23,9 @@ init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
     )
 }
 
-#' Starts the new behavior for the console prompt if it is not already
-#' running for an interactive session.
+#' Starts the new behavior for the console prompt.
+#'
+#' If it is not already running for an interactive session.
 #'
 #' @return TRUE if prompt started. FALSE otherwise.
 #'
@@ -35,6 +37,7 @@ start_wd <- function() {
     suppressMessages(
       addTaskCallback(wd_prompt, data = getOption("prompt"), name = "wd_prompt")
     )
+    wd_prompt() # Set prompt before first top-level task is executed.
     return(TRUE)
   } else {
     return(FALSE)
@@ -42,20 +45,26 @@ start_wd <- function() {
 }
 
 
-#' stop_wd
+#' Stop this prompt.
+#'
+#' And revert back to the prompt in effect when \code{start_wd} was executed.
 #'
 #' @export
 #'
 stop_wd <- function() { options("wdprompt.enabled" = FALSE) }
 
 
-#' wd_prompt
+#' The real prompt function.
 #'
-#' There are no arguments because the options are used to control the behavior.
+#' @param ... A taskCallback function can be called with 4 or 5 parameters. If
+#' \code{data} is specified, it is always the 5th argument.  Seemed pointless to
+#' declare explicit parameters that would never be used.
 #'
-#' @param ...
+#' @seealso \link{addTaskCallback}
 #'
-#' @return TRUE
+#' @return TRUE to continue the taskCallback.  FALSE will delete the taskCallback.
+#'
+#' @export
 #'
 wd_prompt <- function(...) {
   wd_enabled <- getOption("wdprompt.enabled")
@@ -91,9 +100,11 @@ wd_prompt <- function(...) {
 }
 
 
-#' check_wd
+#' Diagnostic to display complete status.
 #'
-#' @return temp
+#' @examples
+#' wdprompt::check_wd()
+#'
 #' @export
 #'
 check_wd <- function() {
@@ -114,14 +125,13 @@ check_wd <- function() {
 }
 
 
-#' remove_wd
+#' Brute force removal of the taskCallback.
 #'
-#' @return temp
 #' @export
 #'
 remove_wd <- function() { removeTaskCallback("wd_prompt") }
 
-#' default_prompt
+#' Reset to R's default prompt.
 #'
 #' @export
 #'

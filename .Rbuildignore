@@ -1,2 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^.nojekyll
+^_pkgdown.yml
+^docs.*
+^README.Rmd

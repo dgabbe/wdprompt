@@ -2,17 +2,22 @@
 % Please edit documentation in R/wdprompt.R
 \name{wd_prompt}
 \alias{wd_prompt}
-\title{wd_prompt}
+\title{The real prompt function.}
 \usage{
 wd_prompt(...)
 }
 \arguments{
-\item{...}{}
+\item{...}{A taskCallback function can be called with 4 or 5 parameters. If
+\code{data} is specified, it is always the 5th argument.  Seemed pointless to
+declare explicit parameters that would never be used.}
 }
 \value{
-TRUE
+TRUE to continue the taskCallback.  FALSE will delete the taskCallback.
 }
 \description{
-There are no arguments because the options are used to control the behavior.
+The real prompt function.
+}
+\seealso{
+\link{addTaskCallback}
 }
 
