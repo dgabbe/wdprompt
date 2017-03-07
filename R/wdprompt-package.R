@@ -20,7 +20,7 @@
 #' wdprompt::start_wd()
 #' }
 #'
-#' To start automatically, add these lines to \code{\link{.First}}:
+#' To start automatically, add these lines to \code{\link{.First}} in \code{Rprofile.site}:
 #' \preformatted{
 #' if (interactive()) {
 #'   #
