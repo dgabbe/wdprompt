@@ -12,7 +12,7 @@
 #' @section Installation:
 #'
 #' \code{
-#' devtools::install_github("dgabbe/wdprompt")
+#' devtools::install_github("dgabbe/wdprompt@Current")
 #' }
 #'
 #' To start manually:
