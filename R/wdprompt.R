@@ -67,11 +67,11 @@ stop_wd <- function() { options("wdprompt.enabled" = FALSE) }
 #' @export
 #'
 wd_prompt <- function(...) {
-  wd_enabled <- getOption("wdprompt.enabled")
+  enabled <- getOption("wdprompt.enabled")
   fullPath <- getOption("wdprompt.fullPath")
   promptLen <- c(getOption("wdprompt.promptLen"))
 
-  if (is.null(wd_enabled) || is.null(fullPath) || is.null(promptLen)) {
+  if (is.null(enabled) || is.null(fullPath) || is.null(promptLen)) {
     stop("wdprompt options are not properly configured.  Try running wd_init().")
   }
 
@@ -80,7 +80,7 @@ wd_prompt <- function(...) {
   # of not having to know the id of the callback.  Yeah, having played around
   # with callbacks, it's entirely possible to get multiple instances.
   #
-  if (wd_enabled == FALSE) {
+  if (enabled == FALSE) {
     options("prompt" = as.character(tail(list(...), 1)))
     return(FALSE)
   }
