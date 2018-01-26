@@ -79,5 +79,4 @@
 #' }
 #' @docType package
 #' @name wdprompt-package
-#' @importFrom utils tail
 NULL

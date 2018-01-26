@@ -14,7 +14,6 @@
 #' Only used if \code{wdprompt.fullPath} is \code{FALSE}.
 #'
 #' @export
-#'
 init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
   options(
     "wdprompt.enabled" = enabled,
@@ -30,7 +29,6 @@ init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
 #' @return TRUE if prompt started. FALSE otherwise.
 #'
 #' @export
-#'
 start_wd <- function() {
   if (!"wd_prompt" %in% getTaskCallbackNames() && interactive()) {
     init_wd()
@@ -50,7 +48,6 @@ start_wd <- function() {
 #' And revert back to the prompt in effect when \code{start_wd} was executed.
 #'
 #' @export
-#'
 stop_wd <- function() { options("wdprompt.enabled" = FALSE) }
 
 
@@ -65,7 +62,6 @@ stop_wd <- function() { options("wdprompt.enabled" = FALSE) }
 #' @return TRUE to continue the taskCallback.  FALSE will delete the taskCallback.
 #'
 #' @export
-#'
 wd_prompt <- function(...) {
   enabled <- getOption("wdprompt.enabled")
   fullPath <- getOption("wdprompt.fullPath")
@@ -81,7 +77,7 @@ wd_prompt <- function(...) {
   # with callbacks, it's entirely possible to get multiple instances.
   #
   if (enabled == FALSE) {
-    options("prompt" = as.character(tail(list(...), 1)))
+    options("prompt" = as.character(utils::tail(list(...), 1)))
     return(FALSE)
   }
 
@@ -91,9 +87,11 @@ wd_prompt <- function(...) {
     options("prompt" = paste(curDir, "> \n", sep = ""))
   } else {
     if (nchar(curDir) <= promptLen) {
-      options("prompt" = paste(curDir,"> ", sep = ""))
+      options("prompt" = paste(curDir, "> ", sep = ""))
     } else {
-      options("prompt" = paste("...", substring(curDir, nchar(curDir) - 15), "> ", sep = ""))
+      options(
+        "prompt" = paste("...", substring(curDir, nchar(curDir) - 15), "> ", sep = "")
+      )
     }
   }
   TRUE
@@ -106,7 +104,6 @@ wd_prompt <- function(...) {
 #' wdprompt::check_wd()
 #'
 #' @export
-#'
 check_wd <- function() {
   lapply(
     c("enabled", "fullPath", "promptLen"),
@@ -128,11 +125,9 @@ check_wd <- function() {
 #' Brute force removal of the taskCallback.
 #'
 #' @export
-#'
 remove_wd <- function() { removeTaskCallback("wd_prompt") }
 
 #' Reset to R's default prompt.
 #'
 #' @export
-#'
 default_prompt <- function() { options("prompt" = "> ") }
