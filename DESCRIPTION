@@ -1,12 +1,14 @@
 Package: wdprompt
 Title: R Prompt Displays Working Directory Path
 Version: 2018.01.25
-Encoding: Encoding: UTF-8
 Authors@R: c(person("David", "Gabbé", , "dgabbe@acm.org", role = c("aut", "cre")))
 Description: Emulates the behavior of the bash prompt.
-Depends: R (>= 3.2.4)
 License: MIT + file LICENSE
-LazyData: true
 URL: https://github.com/dgabbe/wdprompt
+Depends: 
+    R (>= 3.2.4)
+Imports: 
+    utils
+Encoding: UTF-8
+LazyData: true
 RoxygenNote: 5.0.1
-Imports: utils
