@@ -79,4 +79,6 @@
 #' }
 #' @docType package
 #' @name wdprompt-package
+#' @keywords internal
+"_PACKAGE"
 NULL

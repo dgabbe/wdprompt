@@ -12,4 +12,3 @@ TRUE if prompt started. FALSE otherwise.
 \description{
 If it is not already running for an interactive session.
 }
-

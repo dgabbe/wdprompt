@@ -13,4 +13,3 @@ Diagnostic to display complete status.
 wdprompt::check_wd()
 
 }
-

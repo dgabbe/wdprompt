@@ -9,4 +9,3 @@ remove_wd()
 \description{
 Brute force removal of the taskCallback.
 }
-

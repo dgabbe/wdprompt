@@ -9,4 +9,3 @@ default_prompt()
 \description{
 Reset to R's default prompt.
 }
-

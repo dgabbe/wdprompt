@@ -21,4 +21,3 @@ Only used if \code{wdprompt.fullPath} is \code{FALSE}.}
 If you want to try different options after \code{start_wd} is called, call
 this again function with your parameter values.
 }
-

@@ -20,4 +20,3 @@ The real prompt function.
 \seealso{
 \link{addTaskCallback}
 }
-

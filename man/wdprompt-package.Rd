@@ -2,6 +2,7 @@
 % Please edit documentation in R/wdprompt-package.R
 \docType{package}
 \name{wdprompt-package}
+\alias{wdprompt}
 \alias{wdprompt-package}
 \title{Console prompt follows current working directory}
 \description{
@@ -19,7 +20,7 @@ In R (tested on OS X), it is honored.
 
 
 \code{
-devtools::install_github("dgabbe/wdprompt")
+devtools::install_github("dgabbe/wdprompt@Current")
 }
 
 To start manually:
@@ -27,7 +28,7 @@ To start manually:
 wdprompt::start_wd()
 }
 
-To start automatically, add these lines to \code{\link{.First}}:
+To start automatically, add these lines to \code{\link{.First}} in \code{Rprofile.site}:
 \preformatted{
 if (interactive()) {
   #
@@ -96,3 +97,15 @@ to terminate all instances.
 }
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/dgabbe/wdprompt}
+}
+
+}
+\author{
+\strong{Maintainer}: David Gabbé \email{dgabbe@acm.org}
+
+}
+\keyword{internal}
