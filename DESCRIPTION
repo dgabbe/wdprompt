@@ -1,7 +1,11 @@
 Package: wdprompt
 Title: R Prompt Displays Working Directory Path
 Version: 2018.01.25
-Authors@R: c(person("David", "Gabbé", , "dgabbe@acm.org", role = c("aut", "cre")))
+Authors@R: 
+    person(given = "David",
+           family = "Gabbé",
+           role = c("aut", "cre"),
+           email = "dgabbe@acm.org")
 Description: Emulates the behavior of the bash prompt.
 License: MIT + file LICENSE
 URL: https://github.com/dgabbe/wdprompt
