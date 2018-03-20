@@ -5,3 +5,4 @@
 ^docs.*
 ^README.Rmd
 ^LICENSE\.md$
+^_pkgdown\.yml$

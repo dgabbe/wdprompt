@@ -23,14 +23,17 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -78,10 +81,10 @@
     </div>
 
     
-    <p>Emulate bash prompt behavior in R console by replacing R&#39;s default prompt of
+    <p>Emulate bash prompt behavior in R console by replacing R's default prompt of
 <code>&gt; </code> with the <code>getwd</code> string. RStudio does display the current
 working directory in the Console window title bar, but it is not where I
-reflexively look. The global environment can be cleared without affecting the prompt
+normally look. The global environment can be cleared without affecting the prompt
 behavior.</p>
     
 
@@ -93,88 +96,83 @@ In R (tested on OS X), it is honored.</p>
     
     <h2 class="hasAnchor" id="installation"><a class="anchor" href="#installation"></a>Installation</h2>
 
-    <p></p>
-    <p><code>
-devtools::install_github(&quot;dgabbe/wdprompt@Current&quot;)
-</code></p>
-    <p>To start manually:
-<pre>
+    
+    <p><code><a href='http://www.rdocumentation.org/packages/devtools/topics/install_github'>
+devtools::install_github("dgabbe/wdprompt@Current")
+</a></code></p>
+<p>To start manually:</p><pre>
 wdprompt::start_wd()
-</pre></p>
-    <p>To start automatically, add these lines to <code>.First</code> in <code>Rprofile.site</code>:
-<pre>
+</pre>
+    <p>To start automatically, add these lines to <code>.First</code> in <code>Rprofile.site</code>:</p><pre>
 if (interactive()) {
   #
   # wdprompt::stop_wd() if you want to turn off the prompt.
   #
-  if ( length(find.package(&quot;wdprompt&quot;, quiet = TRUE)) != 0 ) {
+  if ( length(find.package("wdprompt", quiet = TRUE)) != 0 ) {
     wdprompt::start_wd()
   }
 }
-</pre></p>
+</pre>
     
     <h2 class="hasAnchor" id="removal"><a class="anchor" href="#removal"></a>Removal</h2>
 
-    <p></p>
-    <p>To stop the prompt and revert back to the prompt before wdprompt was started:</p>
-    <p><code>
+    
+    <p>To stop the prompt and revert back to the prompt before wdprompt was started:
+    <code><a href='http://www.rdocumentation.org/packages/wdprompt/topics/stop_wd'>
 wdprompt::stop_wd()
-</code></p>
+</a></code></p>
     
     <h2 class="hasAnchor" id="options"><a class="anchor" href="#options"></a>Options</h2>
 
-    <p></p>
-    <p><dl class='dl-horizontal'>
-<dt><strong><code>wdprompt.enabled</code></strong></dt><dd><code>TRUE</code> to use the prompt. <code>FALSE</code> to stop
-the prompt and revert back to a static prompt.  See <code><a href='start_wd.html'>start_wd</a></code> for
-the string that is used.</dd>
-<dt><strong><code>wdprompt.fullPath</code></strong></dt><dd><code>TRUE</code> to display the full path name.  <code>FALSE</code> to
-to show a truncated prompt. See <code><a href='wd_prompt.html'>wd_prompt</a></code> for the details.</dd>
-<dt><strong><code>wdprompt.promptLen</code></strong></dt><dd><code>number</code> that determines the length of truncated
-prompt.</dd>
-</dl></p>
+    
+    <dl class='dl-horizontal'>
+  <dt><strong><code>wdprompt.enabled</code></strong></dt><dd><p><code>TRUE</code> to use the prompt.
+  <code>FALSE</code> to stop the prompt and revert back to a static prompt.
+  See <code><a href='start_wd.html'>start_wd</a></code> for the string that is used.</p></dd>
+    <dt><strong><code>wdprompt.fullPath</code></strong></dt><dd><p><code>TRUE</code> to display the full path name.
+  <code>FALSE</code> to to show a truncated prompt. See <code><a href='wd_prompt.html'>wd_prompt</a></code> for the details.</p></dd>
+    <dt><strong><code>wdprompt.promptLen</code></strong></dt><dd><p><code>number</code> that determines the
+  length of truncated prompt.</p></dd>
+</dl>
     
     <h2 class="hasAnchor" id="r-triva"><a class="anchor" href="#r-triva"></a>R Triva</h2>
 
-    <p></p>
-    <p>The taskCallback is invoked at the <em>end</em> of each top-level task.  Roughly translated
-that means when R successfully evaluates an expression typed in the console.  <code>start_wd</code>
-adds the taskCallback, passing in the current prompt and then executes <code>wd_prompt</code> to
-set the prompt to be this new one.</p>
+    
+    <p>The taskCallback is invoked at the <em>end</em> of each top-level task.
+Roughly translated, that means when R successfully evaluates an expression
+typed in the console. <code>start_wd</code> adds the taskCallback, passing in the
+current prompt and then executes <code>wd_prompt</code> to set the prompt to be
+this new one.</p>
     
     <h2 class="hasAnchor" id="random-thoughts"><a class="anchor" href="#random-thoughts"></a>Random Thoughts</h2>
 
-    <p></p>
+    
     <p>My motivation for having the console prompt act the same as my bash prompt
 was creating a uniform command line environment.  Experience has taught me
 that many problems with a build or deploy can be traced back to simply issuing
 the wrong command in the wrong directory.</p>
-    <p>Unfortunately R does not provide this behavior by default and simply setting
+<p>Unfortunately R does not provide this behavior by default and simply setting
 the <code>prompt</code> option in one of the R init files is brittle.  A better solution
-is creating a <code>taskCallback</code>.  There&#39;s enough code that I pulled it out
+is creating a <code>taskCallback</code>.  There's enough code that I pulled it out
 of <code>Rprofile.site</code>. The taskCallbackManager creates a copy of your code
 so one of the only ways to control it is with <code>options</code>.  During
-development, I discovered it&#39;s very easy to instantiate multiple instances of
+development, I discovered it's very easy to instantiate multiple instances of
 a callback so having the code check an option for when to stop made it simple
 to terminate all instances.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p></p>
-    <p><ul>
-<li> <a href = 'https://stackoverflow.com/questions/4222476/r-display-a-time-clock-in-the-r-command-line'>https://stackoverflow.com/questions/4222476/r-display-a-time-clock-in-the-r-command-line</a>
- </li>
-<li> <a href = 'https://stackoverflow.com/questions/25136059/how-to-show-working-directory-in-r-prompt'>https://stackoverflow.com/questions/25136059/how-to-show-working-directory-in-r-prompt</a>
-</li>
-</ul></p>
+    
+    <ul>
+<li><p><a href='https://stackoverflow.com/questions/4222476/r-display-a-time-clock-in-the-r-command-line'>https://stackoverflow.com/questions/4222476/r-display-a-time-clock-in-the-r-command-line</a></p></li>
+<li><p><a href='https://stackoverflow.com/questions/25136059/how-to-show-working-directory-in-r-prompt'>https://stackoverflow.com/questions/25136059/how-to-show-working-directory-in-r-prompt</a></p></li>
+</ul>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>Useful links:
-<ul>
-<li> <a href = 'https://github.com/dgabbe/wdprompt'>https://github.com/dgabbe/wdprompt</a>
-</li>
-</ul></p>
+    <p>Useful links:</p><ul>
+<li><p><a href='https://github.com/dgabbe/wdprompt'>https://github.com/dgabbe/wdprompt</a></p></li>
+</ul>
     
 
   </div>

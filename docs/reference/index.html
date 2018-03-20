@@ -23,14 +23,17 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -74,56 +77,88 @@
       <div class="row">
   <div class="col-md-9">
     <div class="page-header">
-      <h1>Function reference</h1>
-      <h4>version&nbsp;2018.01.25</h4>
+      <h1>
+        Reference
+        <small>version&nbsp;2018.01.25</small>
+      </h1>
     </div>
 
     <div class="contents">
-      <h2 id="section-controlling-wdprompt" class="hasAnchor"><a href="#section-controlling-wdprompt" class="anchor"></a>Controlling wdprompt</h2>
-      <p class="section-desc"><p>Functions for starting/stopping.</p></p>
+      <table class="ref-index">
 
-      
-      <p><a href="init_wd.html">Initializes all 3 options that control prompt behavior.</a></p>
-      <ul>
-        <li><code><a href="init_wd.html">init_wd</a></code></li>
-      </ul>
-      
-      <p><a href="start_wd.html">Starts the new behavior for the console prompt.</a></p>
-      <ul>
-        <li><code><a href="start_wd.html">start_wd</a></code></li>
-      </ul>
-      
-      <p><a href="stop_wd.html">Stop this prompt.</a></p>
-      <ul>
-        <li><code><a href="stop_wd.html">stop_wd</a></code></li>
-      </ul>
-          <h2 id="section-the-prompt-function" class="hasAnchor"><a href="#section-the-prompt-function" class="anchor"></a>The prompt function</h2>
-      <p class="section-desc"><p>The function that does all the work.</p></p>
+      <colgroup>
+        <col class="alias" />
+        <col class="title" />
+      </colgroup>
 
-      
-      <p><a href="wd_prompt.html">The real prompt function.</a></p>
-      <ul>
-        <li><code><a href="wd_prompt.html">wd_prompt</a></code></li>
-      </ul>
-          <h2 id="section-diagnostic-functions" class="hasAnchor"><a href="#section-diagnostic-functions" class="anchor"></a>Diagnostic Functions</h2>
-      <p class="section-desc"><p>Figuring out what’s wrong</p></p>
-
-      
-      <p><a href="check_wd.html">Diagnostic to display complete status.</a></p>
-      <ul>
-        <li><code><a href="check_wd.html">check_wd</a></code></li>
-      </ul>
-      
-      <p><a href="default_prompt.html">Reset to R's default prompt.</a></p>
-      <ul>
-        <li><code><a href="default_prompt.html">default_prompt</a></code></li>
-      </ul>
-      
-      <p><a href="remove_wd.html">Brute force removal of the taskCallback.</a></p>
-      <ul>
-        <li><code><a href="remove_wd.html">remove_wd</a></code></li>
-      </ul>
-    
+      <tbody>
+        <tr>
+          <th colspan="2">
+            <h2 id="section-controlling-wdprompt" class="hasAnchor"><a href="#section-controlling-wdprompt" class="anchor"></a>Controlling wdprompt</h2>
+            <p class="section-desc"><p>Functions for starting/stopping.</p></p>
+          </th>
+        </tr>
+        <tr>
+          <!--  -->
+          <td>
+            <p><code><a href="start_wd.html">start_wd</a></code> </p>
+          </td>
+          <td><p>Starts the new behavior for the console prompt.</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="stop_wd.html">stop_wd</a></code> </p>
+          </td>
+          <td><p>Stop this prompt.</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="init_wd.html">init_wd</a></code> </p>
+          </td>
+          <td><p>Initializes all 3 options that control prompt behavior.</p></td>
+        </tr>
+      </tbody><tbody>
+        <tr>
+          <th colspan="2">
+            <h2 id="section-the-prompt-function" class="hasAnchor"><a href="#section-the-prompt-function" class="anchor"></a>The prompt function</h2>
+            <p class="section-desc"><p>The function that does all the work.</p></p>
+          </th>
+        </tr>
+        <tr>
+          <!--  -->
+          <td>
+            <p><code><a href="wd_prompt.html">wd_prompt</a></code> </p>
+          </td>
+          <td><p>The real prompt function.</p></td>
+        </tr>
+      </tbody><tbody>
+        <tr>
+          <th colspan="2">
+            <h2 id="section-diagnostic-functions" class="hasAnchor"><a href="#section-diagnostic-functions" class="anchor"></a>Diagnostic Functions</h2>
+            <p class="section-desc"><p>Figuring out what’s wrong</p></p>
+          </th>
+        </tr>
+        <tr>
+          <!--  -->
+          <td>
+            <p><code><a href="check_wd.html">check_wd</a></code> </p>
+          </td>
+          <td><p>Diagnostic to display complete status.</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="remove_wd.html">remove_wd</a></code> </p>
+          </td>
+          <td><p>Brute force removal of the taskCallback.</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="default_prompt.html">default_prompt</a></code> </p>
+          </td>
+          <td><p>Reset to R's default prompt.</p></td>
+        </tr>
+      </tbody>
+      </table>
     </div>
   </div>
 

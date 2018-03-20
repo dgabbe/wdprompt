@@ -23,14 +23,17 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -82,21 +85,28 @@
 this again function with your parameter values.</p>
     
 
-    <pre><span class='fu'>init_wd</span>(<span class='kw'>enabled</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fullPath</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>promptLen</span> <span class='kw'>=</span> <span class='fl'>15</span>)</pre>
+    <pre class="usage"><span class='fu'>init_wd</span>(<span class='kw'>enabled</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fullPath</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>promptLen</span> <span class='kw'>=</span> <span class='fl'>15</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>enabled</dt>
-      <dd><code>TRUE</code> to keep wdprompt active. <code>FALSE</code> to stop it
-and revert back to the static prompt when <code>start_wd</code> was called.</dd>
-      <dt>fullPath</dt>
-      <dd><code>TRUE</code> to display the full path returned by
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>enabled</th>
+      <td><p><code>TRUE</code> to keep wdprompt active. <code>FALSE</code> to stop it
+and revert back to the static prompt when <code>start_wd</code> was called.</p></td>
+    </tr>
+    <tr>
+      <th>fullPath</th>
+      <td><p><code>TRUE</code> to display the full path returned by
 <code>getwd</code>. <code>FALSE</code> to truncate to the last <code>promptLen</code>
-characters of the path.</dd>
-      <dt>promptLen</dt>
-      <dd>A number specifying the length of the prompt string.
-Only used if <code>wdprompt.fullPath</code> is <code>FALSE</code>.</dd>
-    </dl>
+characters of the path.</p></td>
+    </tr>
+    <tr>
+      <th>promptLen</th>
+      <td><p>A number specifying the length of the prompt string.
+Only used if <code>wdprompt.fullPath</code> is <code>FALSE</code>.</p></td>
+    </tr>
+    </table>
     
 
   </div>
