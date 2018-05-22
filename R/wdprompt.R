@@ -22,6 +22,7 @@ init_wd <- function(enabled = TRUE, fullPath = TRUE, promptLen = 15) {
     )
 }
 
+
 #' Starts the new behavior for the console prompt.
 #'
 #' If it is not already running for an interactive session.
@@ -81,6 +82,7 @@ wd_prompt <- function(...) {
     return(FALSE)
   }
 
+
   curDir <- getwd()
   if (fullPath) {
     # Mirror the behavior by my bash prompt.
@@ -126,6 +128,7 @@ check_wd <- function() {
 #'
 #' @export
 remove_wd <- function() { removeTaskCallback("wd_prompt") }
+
 
 #' Reset to R's default prompt.
 #'

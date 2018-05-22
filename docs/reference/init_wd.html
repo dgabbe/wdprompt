@@ -18,13 +18,23 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Initializes all 3 options that control prompt behavior. — init_wd" />
+
+<meta property="og:description" content="If you want to try different options after start_wd is called, call
+this again function with your parameter values." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,8 +57,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">wdprompt</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">wdprompt</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2018.1.25</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -67,6 +81,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -74,20 +89,24 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Initializes all 3 options that control prompt behavior.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dgabbe/wdprompt/blob/master/R/wdprompt.R'><code>R/wdprompt.R</code></a></small>
+    <div class="hidden name"><code>init_wd.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>If you want to try different options after <code>start_wd</code> is called, call
 this again function with your parameter values.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>init_wd</span>(<span class='kw'>enabled</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fullPath</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>promptLen</span> <span class='kw'>=</span> <span class='fl'>15</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -125,11 +144,14 @@ Only used if <code>wdprompt.fullPath</code> is <code>FALSE</code>.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

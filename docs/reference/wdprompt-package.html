@@ -18,13 +18,26 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Console prompt follows current working directory — wdprompt-package" />
+
+<meta property="og:description" content="Emulate bash prompt behavior in R console by replacing R's default prompt of
+&gt;  with the getwd string. RStudio does display the current
+working directory in the Console window title bar, but it is not where I
+normally look. The global environment can be cleared without affecting the prompt
+behavior." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,8 +60,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">wdprompt</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">wdprompt</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2018.1.25</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -67,6 +84,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -74,12 +92,15 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Console prompt follows current working directory</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dgabbe/wdprompt/blob/master/R/wdprompt-package.R'><code>R/wdprompt-package.R</code></a></small>
+    <div class="hidden name"><code>wdprompt-package.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Emulate bash prompt behavior in R console by replacing R's default prompt of
 <code>&gt; </code> with the <code>getwd</code> string. RStudio does display the current
@@ -87,6 +108,7 @@ working directory in the Console window title bar, but it is not where I
 normally look. The global environment can be cleared without affecting the prompt
 behavior.</p>
     
+    </div>
 
         
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -117,8 +139,8 @@ if (interactive()) {
     <h2 class="hasAnchor" id="removal"><a class="anchor" href="#removal"></a>Removal</h2>
 
     
-    <p>To stop the prompt and revert back to the prompt before wdprompt was started:
-    <code><a href='http://www.rdocumentation.org/packages/wdprompt/topics/stop_wd'>
+    <p>To stop the prompt and revert back to the prompt before wdprompt was started:</p>
+<p><code><a href='stop_wd.html'>
 wdprompt::stop_wd()
 </a></code></p>
     
@@ -170,9 +192,9 @@ to terminate all instances.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>Useful links:</p><ul>
+    <div class='dont-index'><p>Useful links:</p><ul>
 <li><p><a href='https://github.com/dgabbe/wdprompt'>https://github.com/dgabbe/wdprompt</a></p></li>
-</ul>
+</ul></div>
     
 
   </div>
@@ -211,11 +233,14 @@ to terminate all instances.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+
