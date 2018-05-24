@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://blog.frame38.com/wdprompt/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.frame38.com/wdprompt/reference/check_wd.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.frame38.com/wdprompt/reference/default_prompt.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.frame38.com/wdprompt/reference/init_wd.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.frame38.com/wdprompt/reference/remove_wd.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.frame38.com/wdprompt/reference/start_wd.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.frame38.com/wdprompt/reference/stop_wd.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.frame38.com/wdprompt/reference/wd_prompt.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.frame38.com/wdprompt/reference/wdprompt-package.html</loc>
+  </url>
+</urlset>

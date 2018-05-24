@@ -8,7 +8,9 @@ Authors@R:
            email = "dgabbe@acm.org")
 Description: Emulates the behavior of the bash prompt.
 License: MIT + file LICENSE
-URL: https://github.com/dgabbe/wdprompt
+URL: 
+    https://github.com/dgabbe/wdprompt,
+    https://blog.frame38.com/wdprompt
 Depends: 
     R (>= 3.2.4)
 Imports: 
