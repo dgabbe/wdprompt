@@ -1,13 +1,13 @@
 #' Initializes all 3 options that control prompt behavior.
 #'
-#' If you want to try different options after \code{start_wd} is called, call
+#' If you want to try different options after \code{start_wd()} is called, call
 #' this again function with your parameter values.
 #'
 #' @param enabled \code{TRUE} to keep wdprompt active. \code{FALSE} to stop it
-#' and revert back to the static prompt when \code{start_wd} was called.
+#' and revert back to the static prompt when \code{start_wd()} was called.
 #'
 #' @param fullPath \code{TRUE} to display the full path returned by
-#'   \code{\link{getwd}}. \code{FALSE} to truncate to the last \code{promptLen}
+#'   \code{\link{getwd()}}. \code{FALSE} to truncate to the last \code{promptLen}
 #'   characters of the path.
 #'
 #' @param promptLen A number specifying the length of the prompt string.
@@ -46,7 +46,7 @@ start_wd <- function() {
 
 #' Stop this prompt.
 #'
-#' And revert back to the prompt in effect when \code{start_wd} was executed.
+#' And revert back to the prompt in effect when \code{start_wd()} was executed.
 #'
 #' @export
 stop_wd <- function() { options("wdprompt.enabled" = FALSE) }
@@ -58,7 +58,7 @@ stop_wd <- function() { options("wdprompt.enabled" = FALSE) }
 #' \code{data} is specified, it is always the 5th argument.  Seemed pointless to
 #' declare explicit parameters that would never be used.
 #'
-#' @seealso \link{addTaskCallback}
+#' @seealso \link{addTaskCallback()}
 #'
 #' @return TRUE to continue the taskCallback.  FALSE will delete the taskCallback.
 #'
