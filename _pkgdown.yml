@@ -1,24 +1,31 @@
 url: https://blog.frame38.com/wdprompt
+
+development:
+  mode: auto
+
 navbar:
-  left:
-  - text: Intro
-    href: reference/wdprompt-package.html
-  - text: Reference
-    href: reference/index.html
-reference:
-  - title: "Controlling wdprompt"
-    desc: "Functions for starting/stopping."
-    contents:
+  structure:
+    left: [home, intro, reference]
+    right: [github]
+
+components:
+  home: ~
+  intro:
+    - title: Intro
+  reference:
+    - title: Controlling wdprompt
+      desc: Functions for starting/stopping.
+      contents:
       - start_wd
       - stop_wd
       - init_wd
-  - title: The prompt function
-    desc: "The function that does all the work."
-    contents:
+    - title: The prompt function
+      desc: The function that does all the work.
+      contents:
       - wd_prompt
-  - title: "Diagnostic Functions"
-    desc: "Figuring out what's wrong"
-    contents:
+    - title: Diagnostic Functions
+      desc: Figuring out what's wrong
+      contents:
       - check_wd
       - remove_wd
       - default_prompt
