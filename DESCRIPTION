@@ -1,6 +1,6 @@
 Package: wdprompt
 Title: R Prompt Displays Working Directory Path
-Version: 2018.01.25
+Version: 2018.05.24
 Authors@R: 
     person(given = "David",
            family = "Gabbé",
@@ -11,6 +11,7 @@ License: MIT + file LICENSE
 URL: 
     https://github.com/dgabbe/wdprompt,
     https://blog.frame38.com/wdprompt
+BugReports: https://github.com/dgabbe/wdprompt/issues/new
 Depends: 
     R (>= 3.2.4)
 Imports: 
