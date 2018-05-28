@@ -12,15 +12,5 @@ working directory in the Console window title bar, but it is not
 normally where I look. The global environment can be cleared without
 affecting the prompt behavior.
 
-``` r
-> library(wdprompt)
-> stop_wd()
-> getwd()
-#> [1] "/Users/dgabbe/_git/_r/wdprompt"
-> init_wd()
-> start_wd()
-#> [1] FALSE
-```
-
 Complete package documentation is
 [here](https://blog.frame38.com/wdprompt/reference/wdprompt-package.html).

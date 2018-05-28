@@ -104,6 +104,8 @@ to terminate all instances.
 Useful links:
 \itemize{
   \item \url{https://github.com/dgabbe/wdprompt}
+  \item \url{https://blog.frame38.com/wdprompt}
+  \item Report bugs at \url{https://github.com/dgabbe/wdprompt/issues/new}
 }
 
 }
