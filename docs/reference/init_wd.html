@@ -30,7 +30,7 @@
 
 <meta property="og:title" content="Initializes all 3 options that control prompt behavior. — init_wd" />
 
-<meta property="og:description" content="If you want to try different options after start_wd is called, call
+<meta property="og:description" content="If you want to try different options after start_wd() is called, call
 this again function with your parameter values." />
 <meta name="twitter:card" content="summary" />
 
@@ -59,14 +59,17 @@ this again function with your parameter values." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">wdprompt</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2018.1.25</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2018.5.24</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/wdprompt-package.html">Intro</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -99,7 +102,7 @@ this again function with your parameter values." />
 
     <div class="ref-description">
     
-    <p>If you want to try different options after <code>start_wd</code> is called, call
+    <p>If you want to try different options after <code><a href='start_wd.html'>start_wd()</a></code> is called, call
 this again function with your parameter values.</p>
     
     </div>
@@ -112,12 +115,12 @@ this again function with your parameter values.</p>
     <tr>
       <th>enabled</th>
       <td><p><code>TRUE</code> to keep wdprompt active. <code>FALSE</code> to stop it
-and revert back to the static prompt when <code>start_wd</code> was called.</p></td>
+and revert back to the static prompt when <code><a href='start_wd.html'>start_wd()</a></code> was called.</p></td>
     </tr>
     <tr>
       <th>fullPath</th>
       <td><p><code>TRUE</code> to display the full path returned by
-<code>getwd</code>. <code>FALSE</code> to truncate to the last <code>promptLen</code>
+<code>getwd()</code>. <code>FALSE</code> to truncate to the last <code>promptLen</code>
 characters of the path.</p></td>
     </tr>
     <tr>

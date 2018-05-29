@@ -7,5 +7,5 @@
 stop_wd()
 }
 \description{
-And revert back to the prompt in effect when \code{start_wd} was executed.
+And revert back to the prompt in effect when \code{start_wd()} was executed.
 }
