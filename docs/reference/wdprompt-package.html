@@ -31,7 +31,7 @@
 <meta property="og:title" content="Console prompt follows current working directory — wdprompt-package" />
 
 <meta property="og:description" content="Emulate bash prompt behavior in R console by replacing R's default prompt of
-&gt;  with the getwd() string. RStudio does display the current
+&gt;  with the getwd string. RStudio does display the current
 working directory in the Console window title bar, but it is not where I
 normally look. The global environment can be cleared without affecting the prompt
 behavior." />
@@ -70,9 +70,12 @@ behavior." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
   </a>
+</li>
+<li>
+  <a href="../reference/wdprompt-package.html">Intro</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -106,7 +109,7 @@ behavior." />
     <div class="ref-description">
     
     <p>Emulate bash prompt behavior in R console by replacing R's default prompt of
-<code>&gt; </code> with the <code>getwd()</code> string. RStudio does display the current
+<code>&gt; </code> with the <code>getwd</code> string. RStudio does display the current
 working directory in the Console window title bar, but it is not where I
 normally look. The global environment can be cleared without affecting the prompt
 behavior.</p>
@@ -128,7 +131,7 @@ devtools::install_github("dgabbe/wdprompt@Current")
 <p>To start manually:</p><pre>
 wdprompt::start_wd()
 </pre>
-    <p>To start automatically, add these lines to <code>.First()</code> in <code>Rprofile.site</code>:</p><pre>
+    <p>To start automatically, add these lines to <code>.First</code> in <code>Rprofile.site</code>:</p><pre>
 if (interactive()) {
   #
   # wdprompt::stop_wd() if you want to turn off the prompt.
@@ -153,9 +156,9 @@ wdprompt::stop_wd()
     <dl class='dl-horizontal'>
   <dt><strong><code>wdprompt.enabled</code></strong></dt><dd><p><code>TRUE</code> to use the prompt.
   <code>FALSE</code> to stop the prompt and revert back to a static prompt.
-  See <code><a href='start_wd.html'>start_wd()</a></code> for the string that is used.</p></dd>
+  See <code><a href='start_wd.html'>start_wd</a></code> for the string that is used.</p></dd>
     <dt><strong><code>wdprompt.fullPath</code></strong></dt><dd><p><code>TRUE</code> to display the full path name.
-  <code>FALSE</code> to to show a truncated prompt. See <code><a href='wd_prompt.html'>wd_prompt()</a></code> for the details.</p></dd>
+  <code>FALSE</code> to to show a truncated prompt. See <code><a href='wd_prompt.html'>wd_prompt</a></code> for the details.</p></dd>
     <dt><strong><code>wdprompt.promptLen</code></strong></dt><dd><p><code>number</code> that determines the
   length of truncated prompt.</p></dd>
 </dl>
@@ -165,8 +168,8 @@ wdprompt::stop_wd()
     
     <p>The taskCallback is invoked at the <em>end</em> of each top-level task.
 Roughly translated, that means when R successfully evaluates an expression
-typed in the console. <code><a href='start_wd.html'>start_wd()</a></code> adds the taskCallback, passing in the
-current prompt and then executes <code><a href='wd_prompt.html'>wd_prompt()</a></code> to set the prompt to be
+typed in the console. <code>start_wd</code> adds the taskCallback, passing in the
+current prompt and then executes <code>wd_prompt</code> to set the prompt to be
 this new one.</p>
     
     <h2 class="hasAnchor" id="random-thoughts"><a class="anchor" href="#random-thoughts"></a>Random Thoughts</h2>
@@ -178,7 +181,7 @@ that many problems with a build or deploy can be traced back to simply issuing
 the wrong command in the wrong directory.</p>
 <p>Unfortunately R does not provide this behavior by default and simply setting
 the <code>prompt</code> option in one of the R init files is brittle.  A better solution
-is creating a <code>taskCallback()</code>.  There's enough code that I pulled it out
+is creating a <code>taskCallback</code>.  There's enough code that I pulled it out
 of <code>Rprofile.site</code>. The taskCallbackManager creates a copy of your code
 so one of the only ways to control it is with <code>options</code>.  During
 development, I discovered it's very easy to instantiate multiple instances of

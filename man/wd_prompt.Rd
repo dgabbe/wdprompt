@@ -18,5 +18,5 @@ TRUE to continue the taskCallback.  FALSE will delete the taskCallback.
 The real prompt function.
 }
 \seealso{
-\link{addTaskCallback()}
+\link{addTaskCallback}
 }

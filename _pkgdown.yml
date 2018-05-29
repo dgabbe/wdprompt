@@ -1,10 +1,13 @@
 url: https://blog.frame38.com/wdprompt
 navbar:
+  title: "wdprompt"
   left:
-  - text: Intro
+  - icon: fa-home
+    href: index.html
+  - text: "Intro"
     href: reference/wdprompt-package.html
-  - text: Reference
-    href: reference/index.html
+  - text: "Reference"
+    href: "reference/index.html"
 reference:
   - title: "Controlling wdprompt"
     desc: "Functions for starting/stopping."
