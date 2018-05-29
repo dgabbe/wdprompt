@@ -2,9 +2,11 @@
 ### wdprompt
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![packageversion](https://img.shields.io/badge/Package%20version-2018.05.24-orange.svg?style=flat-square)](commits/master)
+[![packageversion](https://img.shields.io/badge/Package%20version-2018.05.25-orange.svg?style=flat-square)](https://github.com/dgabbe/wdprompt/commits/master)
+[![GitHub
+(pre-)release](https://img.shields.io/github/release/dgabbe/wdprompt/all.svg)](https://github.com/dgabbe/wdprompt/releases/Current)
+<!-- [![GitHub tag](https://img.shields.io/github/tag/dgabbe/wdprompt.svg)](https://github.com/dgabbe/wdprompt/tags) -->
 <!-- travis badge --> <!-- code coverage badge -->
-<!-- Github download badge? -->
 
 Emulate bash prompt behavior in R console by replacing R’s default
 prompt of `>` with the `getwd` string. RStudio does display the current
