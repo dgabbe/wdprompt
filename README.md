@@ -1,10 +1,12 @@
 
-### wdprompt <img src="https://github.com/dgabbe/wdprompt/blob/master/images/wdprompt_hexagon.png?raw=true" align="right" width=125 />
+## wdprompt <img src="./images/wdprompt_hexagon.png" align="right" width=125 />
 
------
+<!-- ![wdprompt-hexagon](./images/wdprompt_hexagon.png) -->
+
+<!-- <img src="https://github.com/dgabbe/wdprompt/blob/master/images/wdprompt_hexagon.png?raw=true" align="right" width=125 /> -->
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![packageversion](https://img.shields.io/badge/Package%20version-2018.05.25-orange.svg?style=flat-square)](https://github.com/dgabbe/wdprompt/commits/master)
+[![packageversion](https://img.shields.io/badge/Package%20version-2018.05.25-orange.svg?style=flat)](https://github.com/dgabbe/wdprompt/commits/master)
 [![GitHub
 (pre-)release](https://img.shields.io/github/release/dgabbe/wdprompt/all.svg)](https://github.com/dgabbe/wdprompt/releases/Current)
 <!-- [![GitHub tag](https://img.shields.io/github/tag/dgabbe/wdprompt.svg)](https://github.com/dgabbe/wdprompt/tags) -->
