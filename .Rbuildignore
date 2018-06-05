@@ -2,6 +2,7 @@
 ^\.Rproj\.user$
 ^.nojekyll
 ^_pkgdown.yml
+^logo.png
 ^docs.*
 ^README.Rmd
 ^LICENSE\.md$
