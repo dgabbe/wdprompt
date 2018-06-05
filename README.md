@@ -1,6 +1,8 @@
 
 ### wdprompt <img src="https://github.com/dgabbe/wdprompt/blob/master/images/wdprompt_hexagon.png?raw=true" align="right" width=125 />
 
+-----
+
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![packageversion](https://img.shields.io/badge/Package%20version-2018.05.25-orange.svg?style=flat-square)](https://github.com/dgabbe/wdprompt/commits/master)
 [![GitHub
