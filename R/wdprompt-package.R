@@ -1,7 +1,7 @@
 #' Console prompt follows current working directory
 #'
 #' Emulate bash prompt behavior in R console by replacing R's default prompt of
-#' \code{> } with the \code{\link{getwd}} string. RStudio does display the current
+#' \code{> } with the [base::getwd()] string. RStudio does display the current
 #' working directory in the Console window title bar, but it is not where I
 #' normally look. The global environment can be cleared without affecting the prompt
 #' behavior.

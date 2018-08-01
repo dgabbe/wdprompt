@@ -7,7 +7,7 @@
 \title{Console prompt follows current working directory}
 \description{
 Emulate bash prompt behavior in R console by replacing R's default prompt of
-\code{> } with the \code{\link{getwd}} string. RStudio does display the current
+\code{> } with the \code{\link[base:getwd]{base::getwd()}} string. RStudio does display the current
 working directory in the Console window title bar, but it is not where I
 normally look. The global environment can be cleared without affecting the prompt
 behavior.
@@ -53,15 +53,15 @@ wdprompt::stop_wd()
 \section{Options}{
 
 \describe{
-  \item{\strong{\code{wdprompt.enabled}}}{\code{TRUE} to use the prompt.
-  \code{FALSE} to stop the prompt and revert back to a static prompt.
-  See \code{\link{start_wd}} for the string that is used.}
+\item{\strong{\code{wdprompt.enabled}}}{\code{TRUE} to use the prompt.
+\code{FALSE} to stop the prompt and revert back to a static prompt.
+See \code{\link{start_wd}} for the string that is used.}
 
-  \item{\strong{\code{wdprompt.fullPath}}}{\code{TRUE} to display the full path name.
-  \code{FALSE} to to show a truncated prompt. See \code{\link{wd_prompt}} for the details.}
+\item{\strong{\code{wdprompt.fullPath}}}{\code{TRUE} to display the full path name.
+\code{FALSE} to to show a truncated prompt. See \code{\link{wd_prompt}} for the details.}
 
-  \item{\strong{\code{wdprompt.promptLen}}}{\code{number} that determines the
-  length of truncated prompt.}
+\item{\strong{\code{wdprompt.promptLen}}}{\code{number} that determines the
+length of truncated prompt.}
 }
 }
 
@@ -95,8 +95,8 @@ to terminate all instances.
 \section{References}{
 
 \itemize{
- \item \url{https://stackoverflow.com/questions/4222476/r-display-a-time-clock-in-the-r-command-line}
- \item \url{https://stackoverflow.com/questions/25136059/how-to-show-working-directory-in-r-prompt}
+\item \url{https://stackoverflow.com/questions/4222476/r-display-a-time-clock-in-the-r-command-line}
+\item \url{https://stackoverflow.com/questions/25136059/how-to-show-working-directory-in-r-prompt}
 }
 }
 

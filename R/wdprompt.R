@@ -7,7 +7,7 @@
 #' and revert back to the static prompt when \code{start_wd} was called.
 #'
 #' @param fullPath \code{TRUE} to display the full path returned by
-#'   \code{\link{getwd}}. \code{FALSE} to truncate to the last \code{promptLen}
+#'   [base::getwd()]. `FALSE` to truncate to the last \code{promptLen}
 #'   characters of the path.
 #'
 #' @param promptLen A number specifying the length of the prompt string.

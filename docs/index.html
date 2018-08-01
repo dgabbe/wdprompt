@@ -8,14 +8,11 @@
 <title>R Prompt Displays Working Directory Path • wdprompt</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="jquery.sticky-kit.min.js"></script><script src="pkgdown.js"></script><meta property="og:title" content="R Prompt Displays Working Directory Path">
-<meta property="og:title" content="wdprompt package" />
-<meta property="og:url" content="https://blog.frame38.com/wdprompt"/>
-<meta property="og:description" content="wdprompt package emulates bash prompt pwd display" />
-<meta property="og:image" content="https://blog.frame38.com/wdprompt/logo.png" />
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="pkgdown.js"></script><meta property="og:title" content="R Prompt Displays Working Directory Path">
+<meta property="og:description" content="Emulates the behavior of the bash prompt.">
+<meta property="og:image" content="https://blog.frame38.com/wdprompt/logo.png">
 <meta name="twitter:card" content="summary">
-
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -33,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">wdprompt</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2018.5.25</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2018.8.1</span>
       </span>
     </div>
 
@@ -42,7 +39,7 @@
 <li>
   <a href="index.html">
     <span class="fa fa-home fa-lg"></span>
-
+     
   </a>
 </li>
 <li>
@@ -59,7 +56,7 @@
 <li>
   <a href="https://github.com/dgabbe/wdprompt">
     <span class="fa fa-github fa-lg"></span>
-
+     
   </a>
 </li>
       </ul>
@@ -70,16 +67,18 @@
 </div>
 <!--/.navbar -->
 
-
+      
       </header><div class="row">
   <div class="col-md-9 contents">
+    
 
-
-
-
-<div id="wdprompt" class="section level3">
-<h3 class="hasAnchor">
-<a href="#wdprompt" class="anchor"></a>wdprompt</h3>
+    
+    
+<div id="wdprompt" class="section level2">
+<h2 class="hasAnchor">
+<a href="#wdprompt" class="anchor"></a>wdprompt <img src="images/wdprompt_hexagon.png" align="right" width="125">
+</h2>
+<!-- Incorrect alignment from ![wdprompt-hexagon](./images/wdprompt_hexagon.png) -->
 
 <p>Emulate bash prompt behavior in R console by replacing R’s default prompt of <code>&gt;</code> with the <code>getwd</code> string. RStudio does display the current working directory in the Console window title bar, but it is not normally where I look. The global environment can be cleared without affecting the prompt behavior.</p>
 <p>Complete package documentation is <a href="https://blog.frame38.com/wdprompt/reference/wdprompt-package.html">here</a>.</p>
@@ -90,9 +89,9 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/dgabbe/wdprompt">https://github.com/dgabbe/wdprompt</a>
+<li>Browse source code at <br><a href="https://github.com/dgabbe/wdprompt">https://​github.com/​dgabbe/​wdprompt</a>
 </li>
-<li>Report a bug at <br><a href="https://github.com/dgabbe/wdprompt/issues/new">https://github.com/dgabbe/wdprompt/issues/new</a>
+<li>Report a bug at <br><a href="https://github.com/dgabbe/wdprompt/issues/new">https://​github.com/​dgabbe/​wdprompt/​issues/​new</a>
 </li>
 </ul>
 </div>
@@ -115,7 +114,7 @@
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-green.svg" alt="lifecycle"></a></li>
-<li><a href="https://github.com/dgabbe/wdprompt/commits/master"><img src="https://img.shields.io/badge/Package%20version-2018.05.25-orange.svg?style=flat-square" alt="packageversion"></a></li>
+<li><a href="https://github.com/dgabbe/wdprompt/commits/master"><img src="https://img.shields.io/badge/Package%20version-2018.08.01-orange.svg?style=flat" alt="packageversion"></a></li>
 <li><a href="https://github.com/dgabbe/wdprompt/releases/Current"><img src="https://img.shields.io/github/release/dgabbe/wdprompt/all.svg" alt="GitHub (pre-)release"></a></li>
 </ul>
 </div>
@@ -135,7 +134,7 @@
       </footer>
 </div>
 
-
+  
 
   </body>
 </html>
